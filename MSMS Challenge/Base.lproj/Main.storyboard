@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cMz-I3-mrD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -73,10 +74,10 @@
                                 <exclude reference="OPl-o4-5t5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FWS-eI-HQb"/>
                                 <exclude reference="D0R-8j-iIs"/>
                                 <exclude reference="Dr2-qF-7QP"/>
                                 <exclude reference="ycf-A0-s3C"/>
-                                <exclude reference="FWS-eI-HQb"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -86,10 +87,10 @@
                                 <include reference="OPl-o4-5t5"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FWS-eI-HQb"/>
                                 <include reference="D0R-8j-iIs"/>
                                 <include reference="Dr2-qF-7QP"/>
                                 <include reference="ycf-A0-s3C"/>
-                                <include reference="FWS-eI-HQb"/>
                             </mask>
                         </variation>
                     </view>
@@ -103,15 +104,16 @@
             </objects>
             <point key="canvasLocation" x="1297.5" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Creature View Controller-->
         <scene sceneID="koq-Yi-gj8">
             <objects>
-                <viewController id="Olw-fN-feo" sceneMemberID="viewController">
+                <viewController id="Olw-fN-feo" customClass="CreatureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RCK-i2-3Tv"/>
                         <viewControllerLayoutGuide type="bottom" id="YWQ-8u-gL5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gez-0U-Ofh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

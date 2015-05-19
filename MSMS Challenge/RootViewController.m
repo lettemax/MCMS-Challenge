@@ -49,8 +49,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    CreatureViewController *creatureVC = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    CreatureViewController *creatureVC = segue.destinationViewController;
+    creatureVC.creatureName = [self.creatures objectAtIndex:indexPath.row];
 
 }
 

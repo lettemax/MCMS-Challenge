@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CreatureViewController.h
 //  MSMS Challenge
 //
 //  Created by Max Lettenberger on 5/19/15.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CreatureViewController : UIViewController
 
+@property NSString *creatureName;
 
 @end
+
 

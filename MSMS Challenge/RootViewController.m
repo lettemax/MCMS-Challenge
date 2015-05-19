@@ -24,15 +24,20 @@
     [super viewDidLoad];
 
     MagicCreature *pikachu = [[MagicCreature alloc] initWithName:@"Pikachu" detail:@"Has electric powers"];
+    MagicCreature *unicorn = [[MagicCreature alloc] initWithName:@"Unicorn" detail:@"stab you with one horn"];
+    MagicCreature *bigFoot = [[MagicCreature alloc] initWithName:@"Big Foot" detail:@"I will squash you!"];
+    MagicCreature *lochness = [[MagicCreature alloc] initWithName:@"Lochness" detail:@"You will never find me"];
 
-    self.creatures = [NSMutableArray arrayWithObjects:@"Unicorn", @"Big Foot", @"Lochness", nil];
+    self.creatures = [NSMutableArray arrayWithObjects:pikachu, unicorn, bigFoot, lochness, nil];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+    MagicCreature *creature = [self.creatures objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = [self.creatures objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = creature.detail;
+    cell.textLabel.text = creature.name;
 
     return cell;
 }
@@ -44,10 +49,13 @@
 
 - (IBAction)onAddButtonPressed:(UIButton *)sender
 {
-    [self.creatures addObject:self.creatureName.text];
 
+    NSString *creatureName = self.creatureName.text;
+    NSString *creatureDetail = self.detailTextField.text;
     self.creatureName.text = @"";
-
+    self.detailTextField.text = @"";
+    MagicCreature *creatureToAdd = [[MagicCreature alloc] initWithName:creatureName detail:creatureDetail];
+    [self.creatures addObject:creatureToAdd];
     [self.tableView reloadData];
 }
 
@@ -56,8 +64,8 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     CreatureViewController *creatureVC = segue.destinationViewController;
 
-    NSLog(@"creature objecte %@", [self.creatures objectAtIndex:indexPath.row]);
-    creatureVC.creatureName = [self.creatures objectAtIndex:indexPath.row];
+    MagicCreature *magicCreature = [self.creatures objectAtIndex:indexPath.row];
+    creatureVC.magicCreature = magicCreature;
 
 }
 

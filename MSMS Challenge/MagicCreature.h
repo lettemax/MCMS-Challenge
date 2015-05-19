@@ -12,6 +12,7 @@
 
 @property NSString *name;
 @property NSString *detail;
+@property UIImage *creatureImage;
 
 -(instancetype)initWithName:(NSString *)name detail:(NSString *)detail;
 

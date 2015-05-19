@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cMz-I3-mrD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cMz-I3-mrD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,25 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yRf-fd-Kxh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" id="ll2-3R-04l">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ll2-3R-04l" id="dF1-qe-sL7">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Olw-fN-feo" kind="show" identifier="ShowCreatureSegue" id="WKN-q6-rae"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="4cV-h1-WhG"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="zRv-xT-9lu"/>
-                                </connections>
-                            </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJQ-Ca-e1f">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -57,6 +38,33 @@
                                     <action selector="onAddButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xhj-ER-YJF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-Rl-uhn">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="11" y="110" width="277" height="30"/>
+                                </variation>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yRf-fd-Kxh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" id="ll2-3R-04l">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ll2-3R-04l" id="dF1-qe-sL7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Olw-fN-feo" kind="show" identifier="ShowCreatureSegue" id="WKN-q6-rae"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="4cV-h1-WhG"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="zRv-xT-9lu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,14 +72,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yRf-fd-Kxh" secondAttribute="trailing" constant="-16" id="Dr2-qF-7QP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="yRf-fd-Kxh" secondAttribute="bottom" id="FWS-eI-HQb"/>
                             <constraint firstItem="yRf-fd-Kxh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ycf-A0-s3C">
-                                <variation key="widthClass=compact" constant="128"/>
+                                <variation key="widthClass=compact" constant="148"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="yRf-fd-Kxh"/>
                                 <exclude reference="eJQ-Ca-e1f"/>
                                 <exclude reference="OPl-o4-5t5"/>
+                                <exclude reference="wOh-Rl-uhn"/>
+                                <exclude reference="yRf-fd-Kxh"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="FWS-eI-HQb"/>
@@ -82,9 +91,10 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="yRf-fd-Kxh"/>
                                 <include reference="eJQ-Ca-e1f"/>
                                 <include reference="OPl-o4-5t5"/>
+                                <include reference="wOh-Rl-uhn"/>
+                                <include reference="yRf-fd-Kxh"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="FWS-eI-HQb"/>
@@ -97,6 +107,7 @@
                     <navigationItem key="navigationItem" id="hmF-UI-tkN"/>
                     <connections>
                         <outlet property="creatureName" destination="eJQ-Ca-e1f" id="tva-Qb-Xlu"/>
+                        <outlet property="detailTextField" destination="wOh-Rl-uhn" id="0rK-Fl-xVE"/>
                         <outlet property="tableView" destination="yRf-fd-Kxh" id="118-QN-2It"/>
                     </connections>
                 </viewController>
@@ -116,6 +127,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgL-Dq-vvS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="104" width="257" height="30"/>
+                                </variation>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXP-vp-mlB">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -134,16 +154,32 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fR-pg-KI6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="303" y="104" width="45" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditButtonPressed:" destination="Olw-fN-feo" eventType="touchUpInside" id="9Na-pb-vjN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wXP-vp-mlB" firstAttribute="trailing" secondItem="gez-0U-Ofh" secondAttribute="trailingMargin" id="2pb-IK-AuS"/>
+                            <constraint firstItem="wXP-vp-mlB" firstAttribute="trailing" secondItem="gez-0U-Ofh" secondAttribute="trailingMargin" id="2pb-IK-AuS">
+                                <variation key="widthClass=compact" constant="-111"/>
+                            </constraint>
                             <constraint firstItem="wXP-vp-mlB" firstAttribute="top" secondItem="RCK-i2-3Tv" secondAttribute="bottom" constant="40" id="Qmd-pH-Lef"/>
                             <constraint firstItem="wXP-vp-mlB" firstAttribute="leading" secondItem="gez-0U-Ofh" secondAttribute="leadingMargin" id="n8a-G7-BrH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="CgL-Dq-vvS"/>
                                 <exclude reference="wXP-vp-mlB"/>
+                                <exclude reference="9fR-pg-KI6"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2pb-IK-AuS"/>
@@ -153,7 +189,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="CgL-Dq-vvS"/>
                                 <include reference="wXP-vp-mlB"/>
+                                <include reference="9fR-pg-KI6"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2pb-IK-AuS"/>
@@ -164,6 +202,7 @@
                     </view>
                     <connections>
                         <outlet property="creatureNameEditText" destination="wXP-vp-mlB" id="gSU-um-0Sl"/>
+                        <outlet property="creatureNameLabel" destination="CgL-Dq-vvS" id="rLN-JJ-b5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYH-4X-rWm" userLabel="First Responder" sceneMemberID="firstResponder"/>

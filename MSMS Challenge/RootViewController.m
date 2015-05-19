@@ -8,11 +8,13 @@
 
 #import "RootViewController.h"
 #import "CreatureViewController.h"
+#import "MagicCreature.h"
 
 @interface RootViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *creatureName;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *detailTextField;
 
 @end
 
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    MagicCreature *pikachu = [[MagicCreature alloc] initWithName:@"Pikachu" detail:@"Has electric powers"];
 
     self.creatures = [NSMutableArray arrayWithObjects:@"Unicorn", @"Big Foot", @"Lochness", nil];
 }
@@ -52,7 +55,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     CreatureViewController *creatureVC = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
     NSLog(@"creature objecte %@", [self.creatures objectAtIndex:indexPath.row]);
     creatureVC.creatureName = [self.creatures objectAtIndex:indexPath.row];
 

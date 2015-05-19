@@ -10,4 +10,12 @@
 
 @implementation MagicCreature
 
+-(instancetype)initWithName:(NSString *)name detail:(NSString *)detail;
+{
+    self.name = name;
+    self.detail = detail;
+
+    return self;
+}
+
 @end

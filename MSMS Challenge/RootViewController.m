@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
     self.creatures = [NSMutableArray arrayWithObjects:@"Unicorn", @"Big Foot", @"Lochness", nil];
 }
 
@@ -51,8 +52,17 @@
 {
     CreatureViewController *creatureVC = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSLog(@"creature objecte %@", [self.creatures objectAtIndex:indexPath.row]);
+    creatureVC.creatureName = [self.creatures objectAtIndex:indexPath.row];
 
 }
+
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
 
 
 @end

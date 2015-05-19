@@ -9,6 +9,7 @@
 #import "CreatureViewController.h"
 
 @interface CreatureViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *creatureNameEditText;
 
 @end
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
 
     self.title = self.creatureName;
+
 }
 
 

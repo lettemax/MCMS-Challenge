@@ -119,10 +119,20 @@
     } else {
         winner = self.secondFighter;
     }
-    NSString *winnerNameText = [NSString stringWithFormat:@"%@ Kicked ass", ]
+    NSString *winnerNameText = [NSString stringWithFormat:@"%@ Kicked ass", winner.name];
 
+    self.winnerNameLabel.text = winnerNameText;
 
-    
+    int numberOfAccessories = winner.accessories.count;
+
+    int z = arc4random_uniform(numberOfAccessories);
+
+    NSString *accessory = [winner.accessories objectAtIndex:z];
+
+    self.winnerWeaponLabel.text = [NSString stringWithFormat:@"%@ won by using %@", winner.name, accessory];
+
+    self.winnerImage.image = winner.creatureImage;
+
 
 }
 
@@ -141,6 +151,17 @@
     return YES;
 }
 
+- (IBAction)onDoneButtonPressed:(UIButton *)sender {
+    self.firstFighter = nil;
+    self.secondFighter = nil;
+
+    for (MagicCreature *creature in self.creatures) {
+        creature.fight = @"NO";
+    }
+
+    self.fightView.hidden = YES;
+    
+}
 
 
 

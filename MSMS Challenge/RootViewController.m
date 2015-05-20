@@ -24,9 +24,20 @@
     [super viewDidLoad];
 
     MagicCreature *pikachu = [[MagicCreature alloc] initWithName:@"Pikachu" detail:@"Has electric powers"];
+    pikachu.creatureImage = [UIImage imageNamed:@"pikachu"];
+    pikachu.accessories = [NSMutableArray arrayWithObjects:@"Lightning Bolts", @"Thunder", nil];
+
     MagicCreature *unicorn = [[MagicCreature alloc] initWithName:@"Unicorn" detail:@"stab you with one horn"];
+    unicorn.creatureImage = [UIImage imageNamed:@"unicorn"];
+    unicorn.accessories = [NSMutableArray arrayWithObjects:@"Horn", @"Smelly Farts", @"Fly", nil];
+
     MagicCreature *bigFoot = [[MagicCreature alloc] initWithName:@"Big Foot" detail:@"I will squash you!"];
+    bigFoot.creatureImage = [UIImage imageNamed:@"bigfoot"];
+    bigFoot.accessories = [NSMutableArray arrayWithObjects:@"Strong Hands", @"Headbutt", @"Armpit Squash", @"Noogie Power", @"Bad Breath", nil];
+
     MagicCreature *lochness = [[MagicCreature alloc] initWithName:@"Lochness" detail:@"You will never find me"];
+    lochness.creatureImage = [UIImage imageNamed:@"lochness"];
+    lochness.accessories = [NSMutableArray arrayWithObjects:@"Invisibility", @"Sharp Teeth", nil];
 
     self.creatures = [NSMutableArray arrayWithObjects:pikachu, unicorn, bigFoot, lochness, nil];
 }

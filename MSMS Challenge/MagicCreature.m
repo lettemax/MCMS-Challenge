@@ -8,7 +8,7 @@
 
 #import "MagicCreature.h"
 
-@implementation MagicCreature
+@implementation MagicCreature 
 
 -(instancetype)initWithName:(NSString *)name detail:(NSString *)detail;
 {

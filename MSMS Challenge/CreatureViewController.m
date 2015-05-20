@@ -9,11 +9,13 @@
 #import "CreatureViewController.h"
 
 
-@interface CreatureViewController ()
+@interface CreatureViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *creatureNameEditText;
 @property (weak, nonatomic) IBOutlet UILabel *creatureNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    self.creatureImageView.image = self.magicCreature.creatureImage;
 
     self.title = self.magicCreature.name;
 

@@ -71,11 +71,6 @@
 
     for (MagicCreature *creature in self.creatures) {
 
-        if (count == 2) {
-            NSLog(@"fight");
-            [self creaturesFight];
-            break;
-        }
         if ([creature.fight isEqualToString:@"YES"]) {
             count++;
             if (count == 1) {
@@ -83,6 +78,11 @@
             } else if (count == 2) {
                 self.secondFighter = creature;
             }
+        }
+        if (count == 2) {
+            NSLog(@"fight");
+            [self creaturesFight];
+            break;
         }
     }
 

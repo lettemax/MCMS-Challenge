@@ -15,6 +15,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *creatureName;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
+@property MagicCreature *firstFighter;
+@property MagicCreature *secondFighter;
+@property (weak, nonatomic) IBOutlet UIView *fightView;
+@property (weak, nonatomic) IBOutlet UILabel *winnerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *winnerWeaponLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *winnerImage;
 
 @end
 
@@ -23,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.fightView.hidden = YES;
     MagicCreature *pikachu = [[MagicCreature alloc] initWithName:@"Pikachu" detail:@"Has electric powers"];
     pikachu.creatureImage = [UIImage imageNamed:@"pikachu"];
     pikachu.accessories = [NSMutableArray arrayWithObjects:@"Lightning Bolts", @"Thunder", nil];
@@ -66,10 +73,16 @@
 
         if (count == 2) {
             NSLog(@"fight");
+            [self creaturesFight];
             break;
         }
         if ([creature.fight isEqualToString:@"YES"]) {
             count++;
+            if (count == 1) {
+                self.firstFighter = creature;
+            } else if (count == 2) {
+                self.secondFighter = creature;
+            }
         }
     }
 
@@ -95,7 +108,22 @@
 
 -(void)creaturesFight
 {
+    self.fightView.hidden = NO;
+    NSLog(@"We're fighting");
+    NSLog(@"%@", self.firstFighter.name);
+    NSLog(@"%@", self.secondFighter.name);
+    MagicCreature *winner = [MagicCreature new];
+    int i = arc4random_uniform(2);
+    if (i == 0) {
+        winner = self.firstFighter;
+    } else {
+        winner = self.secondFighter;
+    }
+    NSString *winnerNameText = [NSString stringWithFormat:@"%@ Kicked ass", ]
+
+
     
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

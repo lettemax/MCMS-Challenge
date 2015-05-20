@@ -59,6 +59,21 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.tableView reloadData];
+
+    int count = 0;
+
+    for (MagicCreature *creature in self.creatures) {
+
+        if (count == 2) {
+            NSLog(@"fight");
+            break;
+        }
+        if ([creature.fight isEqualToString:@"YES"]) {
+            count++;
+        }
+    }
+
+    NSLog(@"At outside the loop");
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -76,6 +91,11 @@
     MagicCreature *creatureToAdd = [[MagicCreature alloc] initWithName:creatureName detail:creatureDetail];
     [self.creatures addObject:creatureToAdd];
     [self.tableView reloadData];
+}
+
+-(void)creaturesFight
+{
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

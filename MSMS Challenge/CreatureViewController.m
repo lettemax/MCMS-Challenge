@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *fightButton;
 
 @end
 
@@ -23,8 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
 
     self.creatureImageView.image = self.magicCreature.creatureImage;
 
@@ -38,10 +37,12 @@
 
     self.detailLabel.text = self.magicCreature.detail;
 
-    self.magicCreature.name = @"Bill";
+    if ([self.magicCreature.fight isEqualToString:@"NO"]) {
+        self.fightButton.titleLabel.backgroundColor = [UIColor whiteColor];
+    } else {
+        self.fightButton.titleLabel.backgroundColor = [UIColor redColor];
+    }
 
-    NSLog(@"fight: %@", self.magicCreature.fight);
-    NSLog(@"name: %@", self.magicCreature.name);
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender
@@ -72,6 +73,18 @@
     return cell;
 }
 
+- (IBAction)onFightButtonPressed:(UIButton *)sender
+{
+    if (self.fightButton.titleLabel.backgroundColor == [UIColor whiteColor])
+    {
+        self.fightButton.titleLabel.backgroundColor = [UIColor redColor];
+        self.magicCreature.fight = @"YES";
+    } else {
+        self.fightButton.titleLabel.backgroundColor = [UIColor whiteColor];
+        self.magicCreature.fight = @"NO";
+    }
+
+}
 
 
 

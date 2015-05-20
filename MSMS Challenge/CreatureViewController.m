@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
+
     self.creatureImageView.image = self.magicCreature.creatureImage;
 
     self.title = self.magicCreature.name;
@@ -35,6 +37,11 @@
     self.creatureNameEditText.hidden = YES;
 
     self.detailLabel.text = self.magicCreature.detail;
+
+    self.magicCreature.name = @"Bill";
+
+    NSLog(@"fight: %@", self.magicCreature.fight);
+    NSLog(@"name: %@", self.magicCreature.name);
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender
@@ -54,6 +61,20 @@
 
    }
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.magicCreature.accessories.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+    cell.textLabel.text = [self.magicCreature.accessories objectAtIndex:indexPath.row];
+    return cell;
+}
+
+
+
+
 
 
 

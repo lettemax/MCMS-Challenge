@@ -26,18 +26,22 @@
     MagicCreature *pikachu = [[MagicCreature alloc] initWithName:@"Pikachu" detail:@"Has electric powers"];
     pikachu.creatureImage = [UIImage imageNamed:@"pikachu"];
     pikachu.accessories = [NSMutableArray arrayWithObjects:@"Lightning Bolts", @"Thunder", nil];
+    pikachu.fight = @"NO";
 
     MagicCreature *unicorn = [[MagicCreature alloc] initWithName:@"Unicorn" detail:@"stab you with one horn"];
     unicorn.creatureImage = [UIImage imageNamed:@"unicorn"];
     unicorn.accessories = [NSMutableArray arrayWithObjects:@"Horn", @"Smelly Farts", @"Fly", nil];
+    unicorn.fight = @"NO";
 
     MagicCreature *bigFoot = [[MagicCreature alloc] initWithName:@"Big Foot" detail:@"I will squash you!"];
     bigFoot.creatureImage = [UIImage imageNamed:@"bigfoot"];
     bigFoot.accessories = [NSMutableArray arrayWithObjects:@"Strong Hands", @"Headbutt", @"Armpit Squash", @"Noogie Power", @"Bad Breath", nil];
+    bigFoot.fight = @"NO";
 
     MagicCreature *lochness = [[MagicCreature alloc] initWithName:@"Lochness" detail:@"You will never find me"];
     lochness.creatureImage = [UIImage imageNamed:@"lochness"];
     lochness.accessories = [NSMutableArray arrayWithObjects:@"Invisibility", @"Sharp Teeth", nil];
+    lochness.fight = @"NO";
 
     self.creatures = [NSMutableArray arrayWithObjects:pikachu, unicorn, bigFoot, lochness, nil];
 }
@@ -51,6 +55,10 @@
     cell.textLabel.text = creature.name;
 
     return cell;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

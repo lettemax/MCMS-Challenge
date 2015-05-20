@@ -15,6 +15,7 @@
 @property NSString *detail;
 @property UIImage *creatureImage;
 @property NSMutableArray *accessories;
+@property NSString *fight;
 
 -(instancetype)initWithName:(NSString *)name detail:(NSString *)detail;
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cMz-I3-mrD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cMz-I3-mrD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -153,7 +153,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="104" width="257" height="30"/>
+                                    <rect key="frame" x="16" y="104" width="234" height="30"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXP-vp-mlB">
@@ -174,18 +174,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fR-pg-KI6">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="303" y="104" width="45" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onEditButtonPressed:" destination="Olw-fN-feo" eventType="touchUpInside" id="9Na-pb-vjN"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stq-rD-jR2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -243,11 +231,23 @@
                                     <outlet property="delegate" destination="Olw-fN-feo" id="GWh-NM-C99"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fR-pg-KI6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="281" y="109" width="45" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditButtonPressed:" destination="Olw-fN-feo" eventType="touchUpInside" id="9Na-pb-vjN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wXP-vp-mlB" firstAttribute="trailing" secondItem="gez-0U-Ofh" secondAttribute="trailingMargin" id="2pb-IK-AuS">
-                                <variation key="widthClass=compact" constant="-111"/>
+                                <variation key="widthClass=compact" constant="-134"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="066-hA-KTv" secondAttribute="centerY" id="EfA-CZ-vFa"/>
                             <constraint firstItem="066-hA-KTv" firstAttribute="top" secondItem="stq-rD-jR2" secondAttribute="bottom" constant="64" id="KtR-T0-c82"/>
@@ -265,18 +265,18 @@
                             <mask key="subviews">
                                 <exclude reference="CgL-Dq-vvS"/>
                                 <exclude reference="wXP-vp-mlB"/>
-                                <exclude reference="9fR-pg-KI6"/>
                                 <exclude reference="stq-rD-jR2"/>
                                 <exclude reference="066-hA-KTv"/>
                                 <exclude reference="9nI-Tr-gqx"/>
+                                <exclude reference="9fR-pg-KI6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2pb-IK-AuS"/>
-                                <exclude reference="Qmd-pH-Lef"/>
-                                <exclude reference="n8a-G7-BrH"/>
                                 <exclude reference="MCv-cm-9gC"/>
                                 <exclude reference="X6L-Yr-qn1"/>
                                 <exclude reference="ldm-R3-BH8"/>
+                                <exclude reference="2pb-IK-AuS"/>
+                                <exclude reference="Qmd-pH-Lef"/>
+                                <exclude reference="n8a-G7-BrH"/>
                                 <exclude reference="EfA-CZ-vFa"/>
                                 <exclude reference="KtR-T0-c82"/>
                                 <exclude reference="lI3-b2-w79"/>
@@ -287,18 +287,18 @@
                             <mask key="subviews">
                                 <include reference="CgL-Dq-vvS"/>
                                 <include reference="wXP-vp-mlB"/>
-                                <include reference="9fR-pg-KI6"/>
                                 <include reference="stq-rD-jR2"/>
                                 <include reference="066-hA-KTv"/>
                                 <include reference="9nI-Tr-gqx"/>
+                                <include reference="9fR-pg-KI6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2pb-IK-AuS"/>
-                                <include reference="Qmd-pH-Lef"/>
-                                <include reference="n8a-G7-BrH"/>
                                 <include reference="MCv-cm-9gC"/>
                                 <include reference="X6L-Yr-qn1"/>
                                 <include reference="ldm-R3-BH8"/>
+                                <include reference="2pb-IK-AuS"/>
+                                <include reference="Qmd-pH-Lef"/>
+                                <include reference="n8a-G7-BrH"/>
                                 <exclude reference="EfA-CZ-vFa"/>
                                 <exclude reference="KtR-T0-c82"/>
                                 <include reference="lI3-b2-w79"/>
